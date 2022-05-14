@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="382924fc68c24010b2674016d0ef2b28" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="Model.Connection_Point" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.District" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Hardware" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Hardware_Port" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Hardware_Type" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Maintenance_Staff" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Port" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Request" Width="1.5" PointX="7.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Service_Type" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="8.5" PointY="12.875" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Hardware_Connection_Point" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Request_District" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Hardware_Hardware_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Hardware_Port_Hardware" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Hardware_Port_Port" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Request_Hardware_Port" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Request_Maintenance_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Request_Service_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Request_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
