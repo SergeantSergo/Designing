@@ -1,0 +1,26 @@
+﻿<Page x:Class="Session2.straniza2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Session2"
+      mc:Ignorable="d" 
+      d:DesignHeight="405" d:DesignWidth="677"
+      Title="straniza2">
+
+    <Grid Background="White">
+
+        <DataGrid x:Name="DGridUser" AutoGenerateColumns="False" IsReadOnly="True" >
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header ="оборудование магистральных сетей" Binding ="{Binding Hardwae_Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header ="оборудование сетей доступа" Binding ="{Binding HardwareType}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header ="оборудование абонента" Binding ="{Binding Hardware_Seres}" Width="*"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox HorizontalAlignment="Left" Margin="0,24,0,0" VerticalAlignment="Top" Width="226" Height="35"/>
+        <ComboBox HorizontalAlignment="Left" Margin="226,24,0,0" VerticalAlignment="Top" Width="225" Height="35"/>
+        <ComboBox HorizontalAlignment="Left" Margin="451,24,0,0" VerticalAlignment="Top" Width="216" Height="35"/>
+    </Grid>
+</Page>

@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Session1ModelContainer" CdmEntityContainer="Session1Entities">
+    <EntitySetMapping Name="Connection_Point">
+      <EntityTypeMapping TypeName="Session1Model.Connection_Point">
+        <MappingFragment StoreEntitySet="Connection_Point">
+          <ScalarProperty Name="Connection_Point_ID" ColumnName="Connection_Point_ID" />
+          <ScalarProperty Name="Coordinates" ColumnName="Coordinates" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="District">
+      <EntityTypeMapping TypeName="Session1Model.District">
+        <MappingFragment StoreEntitySet="District">
+          <ScalarProperty Name="District_ID" ColumnName="District_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Square_Area" ColumnName="Square_Area" />
+          <ScalarProperty Name="Population" ColumnName="Population" />
+          <ScalarProperty Name="Construction_Type" ColumnName="Construction_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hardware">
+      <EntityTypeMapping TypeName="Session1Model.Hardware">
+        <MappingFragment StoreEntitySet="Hardware">
+          <ScalarProperty Name="Hardware_ID" ColumnName="Hardware_ID" />
+          <ScalarProperty Name="Hardware_Name" ColumnName="Hardware_Name" />
+          <ScalarProperty Name="Hardware_Type" ColumnName="Hardware_Type" />
+          <ScalarProperty Name="Hardware_Series" ColumnName="Hardware_Series" />
+          <ScalarProperty Name="MAC" ColumnName="MAC" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Installment_Date" ColumnName="Installment_Date" />
+          <ScalarProperty Name="Installment_Location" ColumnName="Installment_Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hardware_Port">
+      <EntityTypeMapping TypeName="Session1Model.Hardware_Port">
+        <MappingFragment StoreEntitySet="Hardware_Port">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Port_ID" ColumnName="Port_ID" />
+          <ScalarProperty Name="Hardware_ID" ColumnName="Hardware_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hardware_Type">
+      <EntityTypeMapping TypeName="Session1Model.Hardware_Type">
+        <MappingFragment StoreEntitySet="Hardware_Type">
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Type_Name" ColumnName="Type_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maintenance_Staff">
+      <EntityTypeMapping TypeName="Session1Model.Maintenance_Staff">
+        <MappingFragment StoreEntitySet="Maintenance_Staff">
+          <ScalarProperty Name="Worker_ID" ColumnName="Worker_ID" />
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+          <ScalarProperty Name="Post_Title" ColumnName="Post_Title" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Port">
+      <EntityTypeMapping TypeName="Session1Model.Port">
+        <MappingFragment StoreEntitySet="Port">
+          <ScalarProperty Name="Port_ID" ColumnName="Port_ID" />
+          <ScalarProperty Name="Port_Type" ColumnName="Port_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Request">
+      <EntityTypeMapping TypeName="Session1Model.Request">
+        <MappingFragment StoreEntitySet="Request">
+          <ScalarProperty Name="Request_ID" ColumnName="Request_ID" />
+          <ScalarProperty Name="Request_Number" ColumnName="Request_Number" />
+          <ScalarProperty Name="Creation_Date" ColumnName="Creation_Date" />
+          <ScalarProperty Name="Service" ColumnName="Service" />
+          <ScalarProperty Name="Service_ID" ColumnName="Service_ID" />
+          <ScalarProperty Name="Service_Type" ColumnName="Service_Type" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Hardware_ID" ColumnName="Hardware_ID" />
+          <ScalarProperty Name="Problem" ColumnName="Problem" />
+          <ScalarProperty Name="Closure_Date" ColumnName="Closure_Date" />
+          <ScalarProperty Name="Problem_Type" ColumnName="Problem_Type" />
+          <ScalarProperty Name="Worker_ID" ColumnName="Worker_ID" />
+          <ScalarProperty Name="District_ID" ColumnName="District_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service_Type">
+      <EntityTypeMapping TypeName="Session1Model.Service_Type">
+        <MappingFragment StoreEntitySet="Service_Type">
+          <ScalarProperty Name="Service_Type_ID" ColumnName="Service_Type_ID" />
+          <ScalarProperty Name="Service_Name" ColumnName="Service_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="Session1Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="User_Number" ColumnName="User_Number" />
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Birthday_Date" ColumnName="Birthday_Date" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Passport_Series_Number" ColumnName="Passport_Series_Number" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

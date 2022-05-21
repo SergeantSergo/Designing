@@ -1,0 +1,88 @@
+﻿<Page x:Class="Session2.straniza4"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Session2"
+      mc:Ignorable="d" 
+      d:DesignHeight="405" d:DesignWidth="674"
+      Title="straniza4">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Платежи"
+            Grid.Row="0" Margin="0,0,0,55"/>
+        <Label Content="Отчеты" Margin="90,0,-10,55"
+            Grid.Row="0"/>
+        <Label Content="Текущая дата" Margin="0,40,514,10"
+               Grid.Row="0"/>
+        <ComboBox Margin="80,40,514,21" Width="80" Height="20" Text="gigi"
+            Grid.Row="0" />
+        <Label Content="Сортировка" Margin="246,0,-46,55"
+               Grid.Row="0" />
+        <Label Content="Поиск" Margin="541,0,-341,0"
+               Grid.Row="0" />
+        <Label Content="Услуга" Margin="541,40,-341,41"
+               Grid.Row="0" Grid.RowSpan="2" />
+
+
+        <ComboBox Margin="594,40,0,21" Width="80" Height="20" Text="фыi"
+            Grid.Row="0" />
+
+
+        <DataGrid x:Name="DGridUser" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header ="Лицевой Счет" Binding ="{Binding Service_ID}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header ="Тариф" Binding ="{Binding Service_Type}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header ="Стоимость пакета" Binding ="{Binding Service_ID}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header ="Задолженность" Binding ="{Binding Service_ID}" Width="*"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="История платежей"
+            Grid.Row="2"/>
+
+        <DataGrid x:Name="DGridDate" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="3">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header ="Дата платежа" Binding ="{Binding Service_ID}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header ="Сумма платежа" Binding ="{Binding Service_Type}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header ="Баланс абонента (после платежа)" Binding ="{Binding Service_ID}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header ="Задолженность после совершения платежа" Binding ="{Binding Service_ID}" Width="*"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Grid.Row="4" Content="Период"/>
+        <Label Grid.Row="4" Content="Сформировать квинтацию" Margin="0,15,0,-10"/>
+        <Label Grid.Row="4" Content="Назначить пени" Margin="0,35,0,-10"/>
+        <Label Grid.Row="4" Content="Перерасчет" Margin="0,60,0,-10"/>
+        <Label Grid.Row="4" Content="Сумма" Margin="0,80,0,-10"/>
+        <ComboBox Grid.Row="4" Width="80" Height="15" Margin="80,4,514,81"/>
+        <ComboBox Grid.Row="4" Width="80" Height="15" Margin="165,4,429,81"/>
+        <Button Content="pdf" Width="60" Height="15"
+                Grid.Row="4" Margin="158,20,456,65" FontSize="8"/>
+        <Button Content="doc" Width="60" Height="15"
+                Grid.Row="4" Margin="223,20,391,65" FontSize="8"/>
+        <Button Content="doc" Width="60" Height="15"
+                Grid.Row="4" Margin="223,39,391,46" FontSize="8"/>
+        <Button Content="pdf" Width="60" Height="15"
+                Grid.Row="4" Margin="158,39,456,46" FontSize="8"/>
+        <TextBox Text="0" Width="60" Height="20" Grid.Row="4" Margin="49,79,565,2"/>
+        <Button Content="doc" Width="60" Height="15"
+                Grid.Row="4" Margin="223,84,391,2" FontSize="8"/>
+        <Button Content="pdf" Width="60" Height="15"
+                Grid.Row="4" Margin="158,84,456,1.667" FontSize="8"/>
+        <RadioButton Content="По задолженности" HorizontalAlignment="Left" Margin="246,44,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="По тарифу" HorizontalAlignment="Left" Margin="246,22,0,0" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Connection_Point">
+    <Key>
+      <PropertyRef Name="Connection_Point_ID" />
+    </Key>
+    <Property Name="Connection_Point_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Coordinates" Type="geography" Nullable="false" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="District_ID" />
+    </Key>
+    <Property Name="District_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="Square_Area" Type="float" Nullable="false" />
+    <Property Name="Population" Type="int" Nullable="false" />
+    <Property Name="Construction_Type" Type="nchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hardware">
+    <Key>
+      <PropertyRef Name="Hardware_ID" />
+    </Key>
+    <Property Name="Hardware_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hardware_Name" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Hardware_Type" Type="int" Nullable="false" />
+    <Property Name="Hardware_Series" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="MAC" Type="nchar" MaxLength="12" Nullable="false" />
+    <Property Name="IP" Type="nchar" MaxLength="12" Nullable="false" />
+    <Property Name="Installment_Date" Type="date" Nullable="false" />
+    <Property Name="Installment_Location" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hardware_Port">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Port_ID" Type="int" Nullable="false" />
+    <Property Name="Hardware_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hardware_Type">
+    <Key>
+      <PropertyRef Name="Type_ID" />
+    </Key>
+    <Property Name="Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type_Name" Type="nchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Maintenance_Staff">
+    <Key>
+      <PropertyRef Name="Worker_ID" />
+    </Key>
+    <Property Name="Worker_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Surname" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Middle_Name" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Post_Title" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone_Number" Type="nchar" MaxLength="12" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Port">
+    <Key>
+      <PropertyRef Name="Port_ID" />
+    </Key>
+    <Property Name="Port_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Port_Type" Type="nchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="Request_ID" />
+    </Key>
+    <Property Name="Request_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Request_Number" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Creation_Date" Type="date" Nullable="false" />
+    <Property Name="Service" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Service_ID" Type="int" Nullable="false" />
+    <Property Name="Service_Type" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Status" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Hardware_ID" Type="int" Nullable="false" />
+    <Property Name="Problem" Type="nchar" MaxLength="10" />
+    <Property Name="Closure_Date" Type="date" />
+    <Property Name="Problem_Type" Type="nchar" MaxLength="10" />
+    <Property Name="Worker_ID" Type="int" Nullable="false" />
+    <Property Name="District_ID" Type="int" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Service_Type">
+    <Key>
+      <PropertyRef Name="Service_Type_ID" />
+    </Key>
+    <Property Name="Service_Type_ID" Type="int" Nullable="false" />
+    <Property Name="Service_Name" Type="nchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Number" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Surname" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Middle_Name" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Gender" Type="nchar" MaxLength="7" Nullable="false" />
+    <Property Name="Birthday_Date" Type="date" Nullable="false" />
+    <Property Name="Phone_Number" Type="nchar" MaxLength="12" Nullable="false" />
+    <Property Name="Email" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nchar" MaxLength="70" Nullable="false" />
+    <Property Name="Passport_Series_Number" Type="int" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Hardware_Connection_Point">
+    <End Role="Connection_Point" Type="Self.Connection_Point" Multiplicity="1" />
+    <End Role="Hardware" Type="Self.Hardware" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Connection_Point">
+        <PropertyRef Name="Connection_Point_ID" />
+      </Principal>
+      <Dependent Role="Hardware">
+        <PropertyRef Name="Installment_Location" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hardware_Hardware_Type">
+    <End Role="Hardware_Type" Type="Self.Hardware_Type" Multiplicity="1" />
+    <End Role="Hardware" Type="Self.Hardware" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hardware_Type">
+        <PropertyRef Name="Type_ID" />
+      </Principal>
+      <Dependent Role="Hardware">
+        <PropertyRef Name="Hardware_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hardware_Port_Hardware">
+    <End Role="Hardware" Type="Self.Hardware" Multiplicity="1" />
+    <End Role="Hardware_Port" Type="Self.Hardware_Port" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hardware">
+        <PropertyRef Name="Hardware_ID" />
+      </Principal>
+      <Dependent Role="Hardware_Port">
+        <PropertyRef Name="Hardware_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hardware_Port_Port">
+    <End Role="Port" Type="Self.Port" Multiplicity="1" />
+    <End Role="Hardware_Port" Type="Self.Hardware_Port" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Port">
+        <PropertyRef Name="Port_ID" />
+      </Principal>
+      <Dependent Role="Hardware_Port">
+        <PropertyRef Name="Port_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Request_District">
+    <End Role="District" Type="Self.District" Multiplicity="1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="District_ID" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="District_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Request_Hardware_Port">
+    <End Role="Hardware_Port" Type="Self.Hardware_Port" Multiplicity="1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hardware_Port">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="Hardware_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Request_Maintenance_Staff">
+    <End Role="Maintenance_Staff" Type="Self.Maintenance_Staff" Multiplicity="1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Maintenance_Staff">
+        <PropertyRef Name="Worker_ID" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="Worker_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Request_Service_Type">
+    <End Role="Service_Type" Type="Self.Service_Type" Multiplicity="1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service_Type">
+        <PropertyRef Name="Service_Type_ID" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="Service_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Request_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Request" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Request">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ModelContainer">
+    <EntitySet Name="Connection_Point" EntityType="Self.Connection_Point" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hardware" EntityType="Self.Hardware" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hardware_Port" EntityType="Self.Hardware_Port" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hardware_Type" EntityType="Self.Hardware_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Maintenance_Staff" EntityType="Self.Maintenance_Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Port" EntityType="Self.Port" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service_Type" EntityType="Self.Service_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Hardware_Connection_Point" Association="Self.FK_Hardware_Connection_Point">
+      <End Role="Connection_Point" EntitySet="Connection_Point" />
+      <End Role="Hardware" EntitySet="Hardware" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hardware_Hardware_Type" Association="Self.FK_Hardware_Hardware_Type">
+      <End Role="Hardware_Type" EntitySet="Hardware_Type" />
+      <End Role="Hardware" EntitySet="Hardware" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hardware_Port_Hardware" Association="Self.FK_Hardware_Port_Hardware">
+      <End Role="Hardware" EntitySet="Hardware" />
+      <End Role="Hardware_Port" EntitySet="Hardware_Port" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hardware_Port_Port" Association="Self.FK_Hardware_Port_Port">
+      <End Role="Port" EntitySet="Port" />
+      <End Role="Hardware_Port" EntitySet="Hardware_Port" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_District" Association="Self.FK_Request_District">
+      <End Role="District" EntitySet="District" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_Hardware_Port" Association="Self.FK_Request_Hardware_Port">
+      <End Role="Hardware_Port" EntitySet="Hardware_Port" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_Maintenance_Staff" Association="Self.FK_Request_Maintenance_Staff">
+      <End Role="Maintenance_Staff" EntitySet="Maintenance_Staff" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_Service_Type" Association="Self.FK_Request_Service_Type">
+      <End Role="Service_Type" EntitySet="Service_Type" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_User" Association="Self.FK_Request_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Request" EntitySet="Request" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

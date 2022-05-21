@@ -1,0 +1,41 @@
+﻿<Page x:Class="Session2.straniza1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Session2"
+      mc:Ignorable="d" 
+      d:DesignHeight="405" d:DesignWidth="800"
+      Title="straniza1">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid x:Name="DGridUser" AutoGenerateColumns="False" IsReadOnly="True" Margin="10,10,10,50">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header ="Абонентский номер" Binding ="{Binding User_Number}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header ="ФИО" Binding ="{Binding FIO}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header ="Лицевой счет" Binding ="{Binding Passport_Series_Number}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header ="Услуги" Binding ="{Binding Email}" Width="*"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <RadioButton Grid.Column="0" Margin="10,350,0,0" Height="20" Width="20" HorizontalAlignment="Left"></RadioButton>
+        <RadioButton Grid.Column="0" Margin="250,350,0,0" Height="20"></RadioButton>
+        <Label Content="Активные" Grid.Column="0" Margin="30,365,0,0" Width="100" HorizontalAlignment="Left"></Label>
+        <Label Content="Неактивные" Grid.Column="0" Margin="270,365,0,0"></Label>
+
+        <ScrollViewer Grid.Column="1">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Background="Gray" Margin="0,0,0,10"></TextBlock>
+                <TextBlock Background="Gray" Margin="0,0,0,10"></TextBlock>
+                <TextBlock Background="Gray" Margin="0,0,0,10"></TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
